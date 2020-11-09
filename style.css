@@ -1,3 +1,19 @@
-body{
-background:rgb(168, 147, 147)
+
+#nav {
+    padding-bottom: 100%;
+    background:rgb(168, 147, 147)
+}
+#tabs{
+    background:rgb(202, 185, 185);
+    padding-bottom: 100%;
+}
+#tabs:nth-child(2n){ /* This should select all children of tabs */
+    color:red;
+    padding: auto;
+    margin: auto;
+}
+
+#mainContent {
+    padding-bottom: 100%;
+    background:rgb(184, 161, 161);
 }
