@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", ()=>{
+$(document).ready(function(){
     const rows = document.querySelectorAll("tr[data-tabname]");
 
     rows.forEach(row => {
