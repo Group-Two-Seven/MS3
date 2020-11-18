@@ -35,3 +35,12 @@ html
 {
   overflow: hidden;
 }
+.header {
+    font-size: 5vw;
+    padding-top: 2vh;
+    padding-bottom: 5vh;
+}
+.promo {
+    box-shadow: 1vw 3vh;
+    width:20vw;
+}
