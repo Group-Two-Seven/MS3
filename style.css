@@ -1,26 +1,29 @@
 
 #nav {
     height:100vh;
-    background:rgb(218, 216, 216)
+    background:rgb(39, 39, 39);
+    color:white;
 }
 #tabs{
-    background:rgb(182, 182, 182);
+    background:rgb(80, 80, 80);
     height:100vh;
+    font-weight: 1;
+    color:white;
 }
-.deactive {
-    filter:brightness(0.5);
+.tab.active {
+    background-color:rgb(182, 182, 182);
+    color:black;
 }
 .tab {
     width:100%;
     height:19.75vh;
-    background:rgb(182, 182, 182);
     text-align:center;
     vertical-align: middle;
     border-bottom-left-radius: 20px;
     padding:auto;
     font-size:2.5vw;
-    border-top: 1vh solid rgb(218, 216, 216);
-    border-bottom: 1vh solid rgb(218, 216, 216);
+    border-top: 1vh solid rgb(39, 39, 39);
+    border-bottom: 1vh solid rgb(39, 39, 39);
     user-select: none;
 }
 table{
