@@ -1,7 +1,7 @@
 /* Lots of playing around in here to do. */
 #nav {
     height:100vh;
-    background:rgb(39, 39, 39);
+    background:rgb(48,48,48);
     color:white;
 }
 #tabs{
@@ -22,8 +22,8 @@
     border-bottom-left-radius: 20px;
     padding:auto;
     font-size:2.5vw;
-    border-top: 1vh solid rgb(39, 39, 39);
-    border-bottom: 1vh solid rgb(39, 39, 39);
+    border-top: 1vh solid rgb(48,48,48);
+    border-bottom: 1vh solid rgb(48,48,48);
     user-select: none;
 }
 table{
@@ -46,4 +46,8 @@ html
 .promo {
     box-shadow: 1vw 3vh;
     width:20vw;
+}
+.left-most-navbar {
+    width:100%;
+    height:100%;
 }
