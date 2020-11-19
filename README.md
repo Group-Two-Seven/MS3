@@ -59,9 +59,9 @@ making changes and pushing to git is more steps than I personally feel it needs 
 3. ``` git push origin branch-name ```  
     In the shopping metaphor, this is bringing what you brought home. No matter how many individual purchases you made, you only came home *(pushed)* once, and all of your purchases *(commits)* came with you.
 
-That covers the basics of git commands. A word of warning, avoid using -f on any command unless you know what you are doing. Also if you forget the -m next to commit, it will open *vim* in the terminal, hit ":q!" to close it.
+That covers the basics of git commands. A word of warning, avoid using `-f` on any command unless you know what you are doing. Also if you forget the `-m` next to commit, it will open *vim* in the terminal, hit `:q!` to close it.
   
 
 ### Git merge
 
-For now, leave merging to me (Luke). If you want to learn how to do it, its pretty straigt forward and I can show you when I get the chance. Its when there are conflicts that things can get messy fast (especially if -f was used).
+For now, leave merging to me (Luke). If you want to learn how to do it, its pretty straigt forward and I can show you when I get the chance. Its when there are conflicts that things can get messy fast (especially if `-f` was used).
