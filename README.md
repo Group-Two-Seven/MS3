@@ -27,7 +27,7 @@ First you will need git and setup your repo. I will walk you through setting up 
 You should now have a file named MS3. Inside that folder is your cloned git repo
 
 
-### Basic Git Commands
+## Basic Git Commands
 
 Create a new **branch**:
 ```git
@@ -46,7 +46,7 @@ Check for **repo** updates (like hitting F5 in a browser, but for your repo):
 git fetch
 ```
 
-#### Git Pushing
+### Git Pushing
 
 making changes and pushing to git is more steps than I personally feel it needs to be. We will have 3 steps: adding, committing, and pushing. Each of these mean something different and only pushing will result in changes for everyone who uses the repo.
 
@@ -62,6 +62,6 @@ making changes and pushing to git is more steps than I personally feel it needs 
 That covers the basics of git commands. A word of warning, avoid using -f on any command unless you know what you are doing. Also if you forget the -m next to commit, it will open *vim* in the terminal, hit ":q!" to close it.
   
 
-#### Git merge
+### Git merge
 
 For now, leave merging to me (Luke). If you want to learn how to do it, its pretty straigt forward and I can show you when I get the chance. Its when there are conflicts that things can get messy fast (especially if -f was used).
