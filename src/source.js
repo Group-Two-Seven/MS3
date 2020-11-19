@@ -1,11 +1,17 @@
  $(document).ready(function(){
-    const rows = document.querySelectorAll("tr[data-tabname]");
-
-    rows.forEach(row => {
-        row.addEventListener("click", () => {// This straps a hidden button onto each tab that will call the "changeTab" function
-            changeTab(row.dataset.tabname)
+    const tabs = document.querySelectorAll("tr[data-tabname]");
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {// This straps a hidden button onto each tab that will call the "changeTab" function
+            changeTab(tab.dataset.tabname)
         })
     }) 
+
+    const restaurants = document.querySelectorAll("div.restaurant");
+    restaurants.forEach(restaurant => {
+        restaurant.addEventListener("click", () => {// This straps a hidden button onto each restaurant in the restaurant tab
+            openMenu(restaurant.dataset.restaurant)
+        })
+    })
 })
 
 function changeTab(tab_name){
@@ -32,4 +38,11 @@ function changeTab(tab_name){
         }
     }
     return true;
+}
+
+function openMenu(menu_name){
+    $("#restaurants").hide()
+    $("#menu").show()
+    // Show menu tab
+
 }
