@@ -12,6 +12,11 @@
             openMenu(restaurant.dataset.restaurant)
         })
     })
+
+    const nav = document.getElementById("nav");
+    nav.addEventListener("click", () => {// This straps a hidden button onto the nav image on the left that will reset the screen to news
+            changeTab("news")
+    })
 })
 
 function changeTab(tab_name){
@@ -41,8 +46,8 @@ function changeTab(tab_name){
 }
 
 function openMenu(menu_name){
-    $("#restaurants").hide()
-    $("#menu").show()
+    document.getElementById ("restaurants").setAttribute("hidden","true")
+    document.getElementById ("menu").removeAttribute("hidden")
     // Show menu tab
 
 }
