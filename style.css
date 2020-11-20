@@ -33,7 +33,14 @@ table{
     height:100vh;
     background:white;
 }
-
+.go_back {
+    background: rgb(80, 80, 80);
+    height:3vh;
+    
+}
+.go_back a{
+    color:white;
+}
 html
 {
   overflow: hidden;
@@ -106,6 +113,25 @@ html
 .menu_item:active {
     filter: brightness(90%);
     box-shadow: 0vw 0vh;
+}
+.menu_item_highlight {
+    user-select: none;
+    height: 10vh;
+    background-color: rgb(229,228,227);
+    margin: 0 2vh;
+    border-radius: 2vh;
+    box-shadow: .1vw .5vh rgba(0,0,0,0.2);
+}
+.menu_item_highlight:hover {
+    filter: brightness(95%);
+    box-shadow: .2vw .8vh rgba(0,0,0,0.2);
+}
+.menu_item_highlight:active {
+    filter: brightness(90%);
+    box-shadow: 0vw 0vh;
+}
+#popular_items{
+    overflow-x:scroll;
 }
 .menu_catagory {
     user-select: none;
