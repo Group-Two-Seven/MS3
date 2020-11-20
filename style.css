@@ -54,8 +54,8 @@ html
 }
 .header-2 {
     font-size: 2vw;
-    padding-top: 0;
-    padding-bottom: 3vh;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
     color:rgb(255,132,0);
     font-weight: 1;
 }
@@ -116,9 +116,9 @@ html
 }
 .menu_item_highlight {
     user-select: none;
-    height: 10vh;
+    height: 8vh;
     background-color: rgb(229,228,227);
-    margin: 0 2vh;
+    margin: 1vh 2vh; 
     border-radius: 2vh;
     box-shadow: .1vw .5vh rgba(0,0,0,0.2);
 }
@@ -136,12 +136,15 @@ html
 .menu_catagory {
     user-select: none;
     height: 5vh;
-    background-color: rgb(214, 214, 214);
     margin-bottom :3vh;
     margin-top :1vh;
-
-    border-radius: 2vh;
-    box-shadow: .1vw .5vh rgba(0,0,0,0.2);
+    font-size: 3vh;
+}
+.menu_catagory:first-child {
+    margin-top :2vh;
+}
+.menu_catagory:hover {
+    box-shadow:0vh 0.2vh rgba(0,0,0,0.2);
 }
 #menu_categories{
     user-select: none;
@@ -158,13 +161,13 @@ html
   }
   
   /* Works on Chrome/Edge/Safari */
-  *::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 0.5vh;
   }
-  *::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: rgba(0,0,0,0);
   }
-  *::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: rgb(214, 214, 214);
     border-radius: 1vh;
   }
