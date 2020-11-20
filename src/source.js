@@ -1,3 +1,54 @@
+ var menu_items= [
+     {
+         name: "Pepperoni Pizza",
+         description:"description 1",
+         image_path:"img/dishes/dish1.png",
+         image_alt:"Pepperoni Pizza"
+     },
+     {
+        name: "Cheese Pizza",
+        description:"description 2",
+        image_path:"img/dishes/dish2.png",
+        image_alt:"Cheese Pizza"
+    },
+    {
+        name: "Canadian Pizza",
+        description:"description 3",
+        image_path:"img/dishes/dish3.png",
+        image_alt:"Canadian Pizza"
+    },
+    {
+        name: "Beef Noodlefull Bowl",
+        description:"description 4",
+        image_path:"img/dishes/dish4.png",
+        image_alt:"Beef Noodlefull Bowl"
+    },
+    {
+        name: "Veggie Noodlefull Bowl",
+        description:"description 5",
+        image_path:"img/dishes/dish5.png",
+        image_alt:"Veggie Noodlefull Bowl"
+    },
+    {
+        name: "Kingburger Supreme",
+        description:"description 6",
+        image_path:"img/dishes/dish6.png",
+        image_alt:"Kingburger Supreme"
+    },
+    {
+        name: "Waffle Bowl",
+        description:"description 7",
+        image_path:"img/dishes/dish7.png",
+        image_alt:"Waffle Bowl"
+    },
+    {
+        name: "White Chocolate Waffle Bowl",
+        description:"description 8",
+        image_path:"img/dishes/dish8.png",
+        image_alt:"White Chocolate Waffle Bowl"
+    },
+ ];
+
  $(document).ready(function(){
     const tabs = document.querySelectorAll("tr[data-tabname]");
     tabs.forEach(tab => {
@@ -17,6 +68,28 @@
     nav.addEventListener("click", () => {// This straps a hidden button onto the nav image on the left that will reset the screen to news
             changeTab("news")
     })
+
+    for(var i=0; i<menu_items.length; i++){
+        $("#menu_items").prepend('\
+        <div class="col-12 menu_item row"> \
+            <div class="col-3"><img src="'+menu_items[i].image_path+'" alt="'+menu_items[i].image_alt+'"></div>\
+                <div class="col">\
+                    <div><strong>'+menu_items[i].name+'</strong></div>\
+                <div>'+menu_items[i].description+'</div>\
+            </div>\
+        </div>')
+    }
+
+    for(var i=0; i<4; i++){// 4 is the number of popular items that can fit in the popular items section
+        $("#popular_items").prepend('\
+        <div class="col menu_item_highlight row"> \
+            <div class="col-3"><img src="'+menu_items[i].image_path+'" alt="'+menu_items[i].image_alt+'"></div>\
+                <div class="col">\
+                    <div><strong>'+menu_items[i].name+'</strong></div>\
+                <div>'+menu_items[i].description+'</div>\
+            </div>\
+        </div>')
+    }
 })
 
 function changeTab(tab_name){
