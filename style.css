@@ -73,7 +73,10 @@ html {
 #categories_bar {
   width: 100%;
 }
-
+#restaurant_list {
+    height:40vh;
+    overflow-y:scroll
+}
 .restaurant {
   user-select: none;
   height: 10vh;
@@ -158,6 +161,7 @@ html {
   box-shadow: 0.1vw 0.5vh rgba(0, 0, 0, 0.2);
   overflow-y: scroll;
 }
+
 * {
   scrollbar-width: thin;
   scrollbar-color: rgba(229, 228, 227, 0.6);
