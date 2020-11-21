@@ -132,6 +132,7 @@ function changeTab(tab_name){
 function openMenu(menu_name){
     document.getElementById ("restaurants").setAttribute("hidden","true")
     document.getElementById ("menu").removeAttribute("hidden")
+    $("#menu_title").text(menu_name + " - Menu")
     // Show menu tab
 
 }
