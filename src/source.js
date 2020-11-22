@@ -2,7 +2,7 @@
      {
          id:1,
          name: "Pepperoni Pizza",
-         description:"description 1",
+         description:"A delicious classic!",
          image_path:"img/menu/pepperoni_pizza.jfif",
          image_alt:"Pepperoni Pizza",
          deep_description:"Quick, Easy and Delicious-Homemade pizza crust and tomato sauce has never been easier-and this recipe for pepperoni pizza produces a delicious classic!",
@@ -15,7 +15,7 @@
      {
         id:2,
         name: "Cheese Pizza",
-        description:"description 2",
+        description:"New York style cheese pizza",
         image_path:"img/menu/cheese_pizza.jfif",
         image_alt:"Cheese Pizza",
         deep_description:"This New York Style Cheese Pizza Recipe features a chewy crust, sweet and tangy sauce, and plenty of gooey cheese! This pizza is almost identical to the famous slices sold on the streets of New York",
@@ -27,7 +27,7 @@
     {
         id:3,
         name: "Canadian Pizza",
-        description:"description 3",
+        description:"A beautifully canadian pizza.",
         image_path:"img/menu/canadian_pizza.png",
         image_alt:"Canadian Pizza",
         deep_description:"Canadian bacon with pineapple and green pepper on French bread makes a quick and tasty pizza.",
@@ -40,7 +40,7 @@
     {
         id:4,
         name: "Beef Noodlefull Bowl",
-        description:"description 4",
+        description:"Beef, Noodles, and Broth. Need I say more?",
         image_path:"img/menu/beef_noodle_bowl.jfif",
         image_alt:"Beef Noodlefull Bowl",
         deep_description:"Have a bowl of deliciousness at dinnertime tonight with our Beef Noodle Bowl.",
@@ -53,7 +53,7 @@
     {
         id:5,
         name: "Veggie Noodlefull Bowl",
-        description:"description 5",
+        description:"A vegetarian-treasured noodle specialty",
         image_path:"img/menu/veggie_noodle_bowl.jfif",
         image_alt:"Veggie Noodlefull Bowl",
         deep_description:"Have a bowl of deliciousness at dinnertime tonight with our Veggie Noodle Bowl.",
@@ -66,7 +66,7 @@
     {
         id:6,
         name: "Kingburger Supreme",
-        description:"description 6",
+        description:"A wonderfully generic burger.",
         image_path:"img/menu/kingburger_supreme.jfif",
         image_alt:"Kingburger Supreme",
         deep_description:"Try a Kingburger Supreme, a signature flame-grilled beef patty topped with a simple layer of crunchy pickles, yellow mustard, and ketchup on a toasted sesame seed bun.",
@@ -79,7 +79,7 @@
     {
         id:7,
         name: "Waffle Bowl",
-        description:"description 7",
+        description:"Its like icecream in a edible bowl!",
         image_path:"img/menu/waffle_bowl.png",
         image_alt:"Waffle Bowl",
         deep_description:"Perfect for all ages and can be jazzed up by dipping the rim into melted chocolate.",
@@ -92,7 +92,7 @@
     {
         id:8,
         name: "Chocolate Waffle Bowl",
-        description:"description 8",
+        description:"Imagine icecream in an edible bowl dipped in chocolate. Suppress your swoon and buy one today!",
         image_path:"img/menu/chocolate_waffle_bowl.jfif",
         image_alt:"Chocolate Waffle Bowl",
         deep_description:"Perfect for all ages and can be jazzed up by dipping the rim into melted chocolate. Now with 20% more chocolate!",
