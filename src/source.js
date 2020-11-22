@@ -3,57 +3,104 @@
          id:1,
          name: "Pepperoni Pizza",
          description:"description 1",
-         image_path:"img/dishes/dish1.png",
-         image_alt:"Pepperoni Pizza"
+         image_path:"img/menu/pepperoni_pizza.jfif",
+         image_alt:"Pepperoni Pizza",
+         deep_description:"Quick, Easy and Delicious-Homemade pizza crust and tomato sauce has never been easier-and this recipe for pepperoni pizza produces a delicious classic!",
+         options:[
+             {name:"Extra Pepperoni", id:"extra_pepperoni"},
+             {name:"Extra Cheese", id:"extra_cheese"},
+             {name:"Extra Sauce", id:"extra_sauce"},
+         ]
      },
      {
         id:2,
         name: "Cheese Pizza",
         description:"description 2",
-        image_path:"img/dishes/dish2.png",
-        image_alt:"Cheese Pizza"
+        image_path:"img/menu/cheese_pizza.jfif",
+        image_alt:"Cheese Pizza",
+        deep_description:"This New York Style Cheese Pizza Recipe features a chewy crust, sweet and tangy sauce, and plenty of gooey cheese! This pizza is almost identical to the famous slices sold on the streets of New York",
+        options:[
+            {name:"Extra Cheese", id:"extra_cheese"},
+            {name:"Extra Sauce", id:"extra_sauce"},
+        ]
     },
     {
         id:3,
         name: "Canadian Pizza",
         description:"description 3",
-        image_path:"img/dishes/dish3.png",
-        image_alt:"Canadian Pizza"
+        image_path:"img/menu/canadian_pizza.png",
+        image_alt:"Canadian Pizza",
+        deep_description:"Canadian bacon with pineapple and green pepper on French bread makes a quick and tasty pizza.",
+        options:[
+            {name:"Extra Cheese", id:"extra_cheese"},
+            {name:"Extra Sauce", id:"extra_sauce"},
+            {name:"Extra Bacon", id:"extra_bacon"},
+        ]
     },
     {
         id:4,
         name: "Beef Noodlefull Bowl",
         description:"description 4",
-        image_path:"img/dishes/dish4.png",
-        image_alt:"Beef Noodlefull Bowl"
+        image_path:"img/menu/beef_noodle_bowl.jfif",
+        image_alt:"Beef Noodlefull Bowl",
+        deep_description:"Have a bowl of deliciousness at dinnertime tonight with our Beef Noodle Bowl.",
+        options:[
+            {name:"Extra Spicy", id:"extra_spicy"},
+            {name:"Extra Beef", id:"extra_beef"},
+            {name:"Extra Noodles", id:"extra_noodles"},
+        ]
     },
     {
         id:5,
         name: "Veggie Noodlefull Bowl",
         description:"description 5",
-        image_path:"img/dishes/dish5.png",
-        image_alt:"Veggie Noodlefull Bowl"
+        image_path:"img/menu/veggie_noodle_bowl.jfif",
+        image_alt:"Veggie Noodlefull Bowl",
+        deep_description:"Have a bowl of deliciousness at dinnertime tonight with our Veggie Noodle Bowl.",
+        options:[
+            {name:"Extra Spicy", id:"extra_spicy"},
+            {name:"Extra Vegetables", id:"extra_vegetables"},
+            {name:"Extra Noodles", id:"extra_noodles"},
+        ]
     },
     {
         id:6,
         name: "Kingburger Supreme",
         description:"description 6",
-        image_path:"img/dishes/dish6.png",
-        image_alt:"Kingburger Supreme"
+        image_path:"img/menu/kingburger_supreme.jfif",
+        image_alt:"Kingburger Supreme",
+        deep_description:"Try a Kingburger Supreme, a signature flame-grilled beef patty topped with a simple layer of crunchy pickles, yellow mustard, and ketchup on a toasted sesame seed bun.",
+        options:[
+            {name:"Extra Sauce", id:"extra_sauce"},
+            {name:"Extra Patty", id:"extra_patty"},
+            {name:"Extra Pickles", id:"extra_pickles"},
+        ]
     },
     {
         id:7,
         name: "Waffle Bowl",
         description:"description 7",
-        image_path:"img/dishes/dish7.png",
-        image_alt:"Waffle Bowl"
+        image_path:"img/menu/waffle_bowl.png",
+        image_alt:"Waffle Bowl",
+        deep_description:"Perfect for all ages and can be jazzed up by dipping the rim into melted chocolate.",
+        options:[
+            {name:"Add Sprinkles", id:"add_sprinkles"},
+            {name:"Extra Scoop", id:"extra_scoop"},
+            {name:"Add Chocolate Sauce", id:"add_chocolate_sauce"},
+        ]
     },
     {
         id:8,
-        name: "White Chocolate Waffle Bowl",
+        name: "Chocolate Waffle Bowl",
         description:"description 8",
-        image_path:"img/dishes/dish8.png",
-        image_alt:"White Chocolate Waffle Bowl"
+        image_path:"img/menu/chocolate_waffle_bowl.jfif",
+        image_alt:"Chocolate Waffle Bowl",
+        deep_description:"Perfect for all ages and can be jazzed up by dipping the rim into melted chocolate. Now with 20% more chocolate!",
+        options:[
+            {name:"Add Sprinkles", id:"add_sprinkles"},
+            {name:"Extra Scoop", id:"extra_scoop"},
+            {name:"Add Chocolate Sauce", id:"add_chocolate_sauce"},
+        ]
     },
  ];
 
@@ -80,7 +127,7 @@
     for(var i=0; i<menu_items.length; i++){
         $("#menu_items").prepend('\
         <div class="col-12 menu_item row" id="menu_item_'+i+'"> \
-            <div class="col-3"><img src="'+menu_items[i].image_path+'" alt="'+menu_items[i].image_alt+'"></div>\
+            <div class="col-3"><img class="menu_img" src="'+menu_items[i].image_path+'" alt="'+menu_items[i].image_alt+'"></div>\
                 <div class="col">\
                     <div><strong>'+menu_items[i].name+'</strong></div>\
                 <div>'+menu_items[i].description+'</div>\
@@ -92,7 +139,6 @@
     for(var i=0; i<4; i++){// 4 is the number of popular items that can fit in the popular items section
         $("#popular_items").prepend('\
         <div class="col menu_item_highlight row" id="menu_item_highlight_'+i+'"> \
-            <div class="col-3"><img src="'+menu_items[i].image_path+'" alt="'+menu_items[i].image_alt+'"></div>\
                 <div class="col">\
                     <div><strong>'+menu_items[i].name+'</strong></div>\
                 <div>'+menu_items[i].description+'</div>\
@@ -139,26 +185,22 @@ function openMenu(menu_name){
 
 function attachModal(item, id){
     $("#modal_placeholder").append('\
-    <div class="modal" tabindex="-1" id="menu_item_'+item.id+'_popup">\
+    <div class="modal pt-5" tabindex="-1" id="menu_item_'+item.id+'_popup">\
         <div class="modal-dialog">\
             <div class="modal-content">\
                 <div class="modal-body">\
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">\
                     <span aria-hidden="true">&times;</span>\
                 </button>\
-                <div class="rows">\
-                    <div class="col-6" id="modal_left_col">\
-                    <div id="modal_image"><img src="'+item.image_path+'" alt="'+item.image_alt+'"/></div>\
-                    <div id="modal_description">'+item.deep_description+'</div>\
-                    </div>\
-                    <div class="col-6" id="modal_right_col">\
-                    <div><input type="number"></div>\
-                    <div id="modal_options">'+item.options+'</div>\
-                    </div>\
+                <div class="row">\
+                    <div id="modal_image" class="col-6"><img class="w-100 rounded" src="'+item.image_path+'" alt="'+item.image_alt+'"/></div>\
+                    <div class="col-6"><input type="number"></div>\
+                    <div id="modal_description" class="col-6">'+item.deep_description+'</div>\
+                    <div id="modal_options" class="col-6">'+generateOptionsHTML(item.options)+'</div>\
                 </div>\
                 </div>\
                 <div class="modal-footer">\
-                <button type="button" class="btn">Add to Cart</button>\
+                <button type="button" class="btn btn-success">Add to Cart</button>\
                 </div>\
             </div>\
         </div>\
@@ -170,14 +212,18 @@ function attachModal(item, id){
 }
 
 function attachModalHighlight(menu_item_id, id){
+    document.getElementById("menu_item_highlight_"+id).addEventListener("click", ()=>{
+        $("#menu_item_"+menu_item_id+"_popup").modal("show");
+    })
+}
 
-
-        document.getElementById("menu_item_highlight_"+id).addEventListener("click", ()=>{
-            $("#menu_item_"+menu_item_id+"_popup").modal("show");
+function generateOptionsHTML(options){
+    var result=""
+    if(options){
+        options.forEach((option)=>{
+            result+= '<input type="checkbox" id="'+option.id+'" name="'+option.id+'" value="'+option.name+'">\
+            <label for="'+option.id+'"> '+option.name+'</label><br>'
         })
-
-        
-  
-    
-    
+    }
+    return result
 }
