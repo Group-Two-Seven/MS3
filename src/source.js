@@ -5,6 +5,7 @@
          description:"A delicious classic!",
          image_path:"img/menu/pepperoni_pizza.jfif",
          image_alt:"Pepperoni Pizza",
+         price:16.99,
          deep_description:"Quick, Easy and Delicious-Homemade pizza crust and tomato sauce has never been easier-and this recipe for pepperoni pizza produces a delicious classic!",
          options:[
              {name:"Extra Pepperoni", id:"extra_pepperoni"},
@@ -18,6 +19,7 @@
         description:"New York style cheese pizza",
         image_path:"img/menu/cheese_pizza.jfif",
         image_alt:"Cheese Pizza",
+        price:14.99,
         deep_description:"This New York Style Cheese Pizza Recipe features a chewy crust, sweet and tangy sauce, and plenty of gooey cheese! This pizza is almost identical to the famous slices sold on the streets of New York",
         options:[
             {name:"Extra Cheese", id:"extra_cheese"},
@@ -30,6 +32,7 @@
         description:"A beautifully canadian pizza.",
         image_path:"img/menu/canadian_pizza.png",
         image_alt:"Canadian Pizza",
+        price:23.99,
         deep_description:"Canadian bacon with pineapple and green pepper on French bread makes a quick and tasty pizza.",
         options:[
             {name:"Extra Cheese", id:"extra_cheese"},
@@ -43,6 +46,7 @@
         description:"Beef, Noodles, and Broth. Need I say more?",
         image_path:"img/menu/beef_noodle_bowl.jfif",
         image_alt:"Beef Noodlefull Bowl",
+        price:14.99,
         deep_description:"Have a bowl of deliciousness at dinnertime tonight with our Beef Noodle Bowl.",
         options:[
             {name:"Extra Spicy", id:"extra_spicy"},
@@ -56,6 +60,7 @@
         description:"A vegetarian-treasured noodle specialty",
         image_path:"img/menu/veggie_noodle_bowl.jfif",
         image_alt:"Veggie Noodlefull Bowl",
+        price:12.99,
         deep_description:"Have a bowl of deliciousness at dinnertime tonight with our Veggie Noodle Bowl.",
         options:[
             {name:"Extra Spicy", id:"extra_spicy"},
@@ -69,6 +74,7 @@
         description:"A wonderfully generic burger.",
         image_path:"img/menu/kingburger_supreme.jfif",
         image_alt:"Kingburger Supreme",
+        price:10.99,
         deep_description:"Try a Kingburger Supreme, a signature flame-grilled beef patty topped with a simple layer of crunchy pickles, yellow mustard, and ketchup on a toasted sesame seed bun.",
         options:[
             {name:"Extra Sauce", id:"extra_sauce"},
@@ -82,6 +88,7 @@
         description:"Its like icecream in a edible bowl!",
         image_path:"img/menu/waffle_bowl.png",
         image_alt:"Waffle Bowl",
+        price:9.99,
         deep_description:"Perfect for all ages and can be jazzed up by dipping the rim into melted chocolate.",
         options:[
             {name:"Add Sprinkles", id:"add_sprinkles"},
@@ -95,6 +102,7 @@
         description:"Imagine icecream in an edible bowl dipped in chocolate. Suppress your swoon and buy one today!",
         image_path:"img/menu/chocolate_waffle_bowl.jfif",
         image_alt:"Chocolate Waffle Bowl",
+        price:10.99,
         deep_description:"Perfect for all ages and can be jazzed up by dipping the rim into melted chocolate. Now with 20% more chocolate!",
         options:[
             {name:"Add Sprinkles", id:"add_sprinkles"},
