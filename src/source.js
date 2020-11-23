@@ -112,6 +112,8 @@
     },
  ];
 
+ var cart = [];//Starts empty
+ 
  $(document).ready(function(){
     const tabs = document.querySelectorAll("tr[data-tabname]");
     tabs.forEach(tab => {
@@ -202,13 +204,13 @@ function attachModal(item, id){
                 </button>\
                 <div class="row">\
                     <div id="modal_image" class="col-6"><img class="w-100 rounded" src="'+item.image_path+'" alt="'+item.image_alt+'"/></div>\
-                    <div class="col-6"><div>Quantity:</div><button class="w-25 text-center" onclick="this.parentNode.querySelector(\'#quantity\').stepDown()">-</button><input class="quantity w-50 text-center" id="quantity" min="0" name="quantity" value="1" type="number"><button class="w-25 text-center" onclick="this.parentNode.querySelector(\'#quantity\').stepUp()">+</button></div>\
+                    <div class="col-6"><div>Quantity:</div><button class="w-25 text-center" onclick="this.parentNode.querySelector(\'#quantity_'+item.id+'\').stepDown()">-</button><input class="quantity w-50 text-center" id="quantity_'+item.id+'" min="0" name="quantity" value="1" type="number"><button class="w-25 text-center" onclick="this.parentNode.querySelector(\'#quantity_'+item.id+'\').stepUp()">+</button></div>\
                     <div id="modal_description" class="col-6">'+item.deep_description+'</div>\
-                    <div id="modal_options" class="col-6">'+generateOptionsHTML(item.options)+'</div>\
+                    <div id="modal_options" class="col-6">'+generateOptionsHTML(item.options, item.id)+'</div>\
                 </div>\
                 </div>\
                 <div class="modal-footer">\
-                <button type="button" class="btn btn-success">Add to Cart</button>\
+                <button type="button" class="btn btn-success" onClick="addToCart('+item.id+')">Add to Cart</button>\
                 </div>\
             </div>\
         </div>\
@@ -219,17 +221,33 @@ function attachModal(item, id){
     })
 }
 
+function addToCart(item_id){
+    var options = $(".option_"+item_id)
+    var quantity = $("#quantity_"+item_id).val()
+
+    var temp = ({
+        options:[],
+        quantity:parseInt(quantity,10),
+        item_id:item_id
+    })
+    for(var i=0; i<options.length;i++){
+        (options[i].checked)?temp.options.push(options[i].id):0;
+    }
+    cart.push(temp);
+    console.log(cart)
+}
+
 function attachModalHighlight(menu_item_id, id){
     document.getElementById("menu_item_highlight_"+id).addEventListener("click", ()=>{
         $("#menu_item_"+menu_item_id+"_popup").modal("show");
     })
 }
 
-function generateOptionsHTML(options){
+function generateOptionsHTML(options, id){
     var result=""
     if(options){
         options.forEach((option)=>{
-            result+= '<input type="checkbox" id="'+option.id+'" name="'+option.id+'" value="'+option.name+'">\
+            result+= '<input type="checkbox" class="option_'+id+'" id="'+option.id+'" name="'+option.id+'" value="'+option.name+'">\
             <label for="'+option.id+'"> '+option.name+'</label><br>'
         })
     }
