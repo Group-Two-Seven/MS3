@@ -233,8 +233,9 @@ function addToCart(item_id){
     for(var i=0; i<options.length;i++){
         (options[i].checked)?temp.options.push(options[i].id):0;
     }
+
     cart.push(temp);
-    console.log(cart)
+
 }
 
 function attachModalHighlight(menu_item_id, id){
