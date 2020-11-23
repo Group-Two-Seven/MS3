@@ -75,7 +75,7 @@
         image_path:"img/menu/kingburger_supreme.jfif",
         image_alt:"Kingburger Supreme",
         price:10.99,
-        deep_description:"Try a Kingburger Supreme, a signature flame-grilled beef patty topped with a simple layer of crunchy pickles, yellow mustard, and ketchup on a toasted sesame seed bun.",
+        deep_description:"A signature flame-grilled beef patty topped with a simple layer of crunchy pickles.",
         options:[
             {name:"Extra Sauce", id:"extra_sauce"},
             {name:"Extra Patty", id:"extra_patty"},
@@ -99,7 +99,7 @@
     {
         id:8,
         name: "Chocolate Waffle Bowl",
-        description:"Imagine icecream in an edible bowl dipped in chocolate. Suppress your swoon and buy one today!",
+        description:"Icecream in an edible bowl dipped in chocolate!",
         image_path:"img/menu/chocolate_waffle_bowl.jfif",
         image_alt:"Chocolate Waffle Bowl",
         price:10.99,
@@ -240,6 +240,7 @@ function addToCart(item_id, modal_id){
     }
 
     cart.push(temp);//push to cart
+    updateCart();
 
     $("#"+modal_id).modal("hide");//hide modal
 
@@ -263,6 +264,43 @@ function generateOptionsHTML(options, id){
             result+= '<input type="checkbox" class="option_'+id+'" id="'+option.id+'" name="'+option.id+'" value="'+option.name+'">\
             <label for="'+option.id+'"> '+option.name+'</label><br>'
         })
+    }
+    return result
+}
+
+function updateCart(){
+    $(".displayed_cart_item").remove()//remove old cart display
+    var item;
+    console.log(cart)
+    for(var i=0;i<cart.length;i++){
+        item = menu_items.find(x => x.id == cart[i].item_id)
+        $("#cart_list").append('<div class="col-12 cart_item row displayed_cart_item">\
+        <img class="col-2" src="'+item.image_path+'" alt="'+item.image_alt+'">\
+        <div class="col-2">\
+          <div><strong>'+item.name+'</strong></div>\
+          <div>'+item.description+'</div>\
+        </div>\
+        <div id="selected_options" class="col-2">\
+        '+generateCartOptions(cart[i],item.options)+'\
+        </div>\
+        <div class="col-1">\
+          <div>'+cart[i].quantity+'</div>\
+        </div>\
+        <div class="col-2">\
+          $'+item.price*cart[i].quantity+'\
+        </div>\
+        <div class="col-2">\
+          <button class="btn btn-danger">remove from cart</button>\
+        </div>\
+      </div>')
+    }
+}
+function generateCartOptions(cart_item, options){
+    var result=""
+    for(var i=0;i<cart_item.options.length;i++){
+        result+=" <li>"+options.find(x => x.id == cart_item.options[i]).name+"</li>"
+        console.log(result)
+
     }
     return result
 }
