@@ -202,7 +202,7 @@ function attachModal(item, id){
                 </button>\
                 <div class="row">\
                     <div id="modal_image" class="col-6"><img class="w-100 rounded" src="'+item.image_path+'" alt="'+item.image_alt+'"/></div>\
-                    <div class="col-6"><input type="number"></div>\
+                    <div class="col-6"><div>Quantity:</div><button class="w-25 text-center" onclick="this.parentNode.querySelector(\'#quantity\').stepDown()">-</button><input class="quantity w-50 text-center" id="quantity" min="0" name="quantity" value="1" type="number"><button class="w-25 text-center" onclick="this.parentNode.querySelector(\'#quantity\').stepUp()">+</button></div>\
                     <div id="modal_description" class="col-6">'+item.deep_description+'</div>\
                     <div id="modal_options" class="col-6">'+generateOptionsHTML(item.options)+'</div>\
                 </div>\

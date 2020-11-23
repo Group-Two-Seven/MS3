@@ -205,6 +205,15 @@ img {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
 input,
 button {
   border-radius: 1vh;
