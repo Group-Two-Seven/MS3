@@ -210,7 +210,7 @@ function attachModal(item, id){
                 </div>\
                 </div>\
                 <div class="modal-footer">\
-                <button type="button" class="btn btn-success" onClick="addToCart('+item.id+')">Add to Cart</button>\
+                <button type="button" class="btn btn-success" onClick="addToCart('+item.id+',\'menu_item_'+item.id+'_popup\')">Add to Cart</button>\
                 </div>\
             </div>\
         </div>\
@@ -222,7 +222,7 @@ function attachModal(item, id){
 }
 
 // Triggered on pressing "add to cart". This method scrapes the modal to get the items customizations.
-function addToCart(item_id){
+function addToCart(item_id, modal_id){
     //scraping
     var options = $(".option_"+item_id)
     var quantity = $("#quantity_"+item_id).val()
@@ -240,6 +240,16 @@ function addToCart(item_id){
     }
 
     cart.push(temp);//push to cart
+
+    $("#"+modal_id).modal("hide");//hide modal
+
+    //reset modal
+    $("#quantity_"+item_id).val(1)
+    for(var i=0; i<options.length;i++){
+        options[i].checked=false;
+    }
+    console.log(cart)
+    
 }
 
 function attachModalHighlight(menu_item_id, id){
