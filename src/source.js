@@ -221,21 +221,25 @@ function attachModal(item, id){
     })
 }
 
+// Triggered on pressing "add to cart". This method scrapes the modal to get the items customizations.
 function addToCart(item_id){
+    //scraping
     var options = $(".option_"+item_id)
     var quantity = $("#quantity_"+item_id).val()
 
+    //Object that will be push to cart
     var temp = ({
         options:[],
         quantity:parseInt(quantity,10),
         item_id:item_id
     })
+
+    //find all 'checked' options
     for(var i=0; i<options.length;i++){
         (options[i].checked)?temp.options.push(options[i].id):0;
     }
 
-    cart.push(temp);
-
+    cart.push(temp);//push to cart
 }
 
 function attachModalHighlight(menu_item_id, id){
