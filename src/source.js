@@ -165,7 +165,7 @@ function changeTab(tab_name){
     //get all elements needed
     const rows = $(".tab");
     const screens = $("#main_content").children()
-
+    console.log(screens)
     if(!$("#"+tab_name).hasClass("disabled")){
         //Remove the highlight from the previous tab and highlight the new tab
         for(var i=0; i<rows.length; i++){
@@ -175,9 +175,10 @@ function changeTab(tab_name){
                 rows[i].classList.remove("active");
             }
         }
-
+        
         //Hide old screen content and unhide new screen content
         for(var i=0; i<screens.length; i++){
+            
             if(screens[i].id == tab_name){
                 screens[i].removeAttribute("hidden")//Here is the workaround for setAttribute("hidden","false"), which wasn't working.
             }else{
@@ -301,6 +302,13 @@ function updateCart(){
       </div>')
     }
     $("#cost_total").html('<p class="text-right">$'+price_total.toFixed(2)+'</p>')
+    if(cart.length!=0){
+        $("#restaurants_tab").addClass("completed")
+        $("#cart_tab").addClass("completed")
+    }else{
+        $("#restaurants_tab").removeClass("completed")
+        $("#cart_tab").removeClass("completed")
+    }
 }
 function removeItemFromCart(cart_number){
     cart.splice(cart_number,1)
@@ -329,13 +337,18 @@ function saveAddress(){
     address = $("#address_field").val()
     $('#address_in_cart').text("Delivering to: "+address)
     if(address!=""){
+        $("#address_tab").addClass("completed")
         $('.disabled').addClass("enabled")
         $('.disabled').removeClass("disabled")
     }else{
+        $("#address_tab").removeClass("completed")
         $('.enabled').addClass("disabled")
         $('.enabled').removeClass("enabled")
     }
-    
+}
+function submitPayment(){
+    $("#payment_tab").addClass("completed")
+    changeTab("order_complete")
 }
 /* payment page */
 $(function() {

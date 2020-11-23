@@ -27,28 +27,28 @@
       <!-- MIDDLE COLUMN (tabs) -->
       <div class="col-2 p-0" id="tabs">
         <table>
-          <tr data-tabname="news" class="tab active">
+          <tr data-tabname="news" class="tab active" id="news_tab">
             <td>News</td>
           </tr>
-          <tr data-tabname="address" class="tab">
+          <tr data-tabname="address" class="tab" id="address_tab">
             <td>Address</td>
           </tr>
-          <tr data-tabname="restaurants" class="tab disabled">
+          <tr data-tabname="restaurants" class="tab disabled" id="restaurants_tab">
             <td>Restaurants</td>
           </tr>
-          <tr data-tabname="cart" class="tab disabled">
+          <tr data-tabname="cart" class="tab disabled" id="cart_tab">
             <td>Cart</td>
           </tr>
-          <tr data-tabname="payment" class="tab disabled">
+          <tr data-tabname="payment" class="tab disabled" id="payment_tab">
             <td>Payment</td>
           </tr>
         </table>
       </div>
 
-      <!-- LEFT-MOST COLUMN (main content) -->
-      <div class="col-8" id="main_content">
+      <!-- RIGHT-MOST COLUMN (main content) -->
+      <div class="col-8 p-0 m-0" id="main_content">
         <!-- NEWS SECTION -->
-        <div class="row" id="news">
+        <div class="row p-2 m-2" id="news">
           <div class="col-12 text-center header">News and Promotions</div>
           <div class="row col-12" id="promo_list">
             <div class="col-4">
@@ -72,13 +72,13 @@
           </div>
         </div>
         <!-- ADDRESS SECTION -->
-        <div id="address" hidden="true">
+        <div class="p-2 m-2" id="address" hidden="true">
           <div class="row">
             <div class="col-12 text-center header">Address</div>
 
             <div class="col-3 mr-2"></div>
             <div class="col-6">
-              <input type="text" class="w-75" onblur="saveAddress()" id="address_field"/>
+              <input type="text" class="w-75" onblur="saveAddress()" id="address_field" />
               <button class="btn-success ml-3">Go!</button>
             </div>
             <div class="col-3"></div>
@@ -91,7 +91,7 @@
           </div>
         </div>
         <!-- RESTAURANTS SECTION -->
-        <div id="restaurants" class="disabled" hidden="true">
+        <div id="restaurants" class="disabled p-2 m-2" hidden="true">
           <div class="row">
             <div class="col-12 pl-5 header">Categories</div>
             <img src="img/Categories.png" alt="A list of categories for searching" id="categories_bar" class="pb-2" />
@@ -222,23 +222,25 @@
             </div>
             <div class="header-2">
               <hr>
-              <div class="row"><div class="col-6">Total</div><div class="col-6" id="cost_total"><p class="text-right">$0.00</p></div></div>
-              <div class="row justify-content-center"><div class="col-6 text-center"><button class="btn btn-warning w-50 h-100" onClick="changeTab('payment')"><strong>Continue To Payment</strong></button></div></div>
+              <div class="row">
+                <div class="col-6">Total</div>
+                <div class="col-6" id="cost_total">
+                  <p class="text-right">$0.00</p>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-6 text-center"><button class="btn btn-warning w-50 h-100"
+                    onClick="changeTab('payment')"><strong>Continue To Payment</strong></button></div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- NEW SECTIONS GO HERE -->
-        <!-- ORDER NOW -->
+
+        <!-- PAYMENT -->
         <div id="payment" class="disabled" hidden="true">
           <div class="row">
-
-
-
             <div class="container py-5 payment-scroll-bar">
               <!-- For demo purpose -->
-
-
-
               <div class="row mb-4">
                 <div class="col-lg-8 mx-auto text-center text-center header">
                   <!-- <div class="text-center header">How would you like to pay today?</div> -->
@@ -256,14 +258,9 @@
                                 class="	fa fa-credit-card"></i> Credit Card </a> </li>
                           <li class="nav-item"> <a data-toggle="pill" href="#paypal" class="nav-link "> <i
                                 class="fa fa-paypal"></i> Paypal </a> </li>
-
                         </ul>
                       </div> <!-- End -->
-
                       <!-- Credit card form content -->
-
-
-
                       <div class="tab-content ">
                         <!-- credit card info-->
                         <div id="credit-card" class="tab-pane fade show active pt-3">
@@ -300,7 +297,8 @@
                               </div>
                             </div>
                             <div class="card-footer"> <button type="button"
-                                class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
+                                class="subscribe btn btn-primary btn-block shadow-sm" onclick="submitPayment()"> Confirm
+                                Payment </button>
                           </form>
                         </div>
                       </div> <!-- End -->
@@ -314,23 +312,19 @@
                             Paypal</button> </p>
                         <!-- <p class="text-muted"> Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p> -->
                       </div> <!-- End -->
-
                       <!-- End -->
                     </div>
-
                   </div>
                 </div>
               </div>
-
-
-
-
-
             </div>
-
           </div>
           <!-- ORDER NOW -->
-
+        </div>
+        </div>
+        <!-- ORDER COMPLETE -->
+        <div id="order_complete" class="p-0 m-0" hidden="true">
+          <img class="w-100" src="img/order_complete.png" alt="Your order is on its way!">
         </div>
       </div>
     </div>
