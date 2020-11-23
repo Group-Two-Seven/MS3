@@ -248,8 +248,6 @@ function addToCart(item_id, modal_id){
     for(var i=0; i<options.length;i++){
         options[i].checked=false;
     }
-    console.log(cart)
-    
 }
 
 function attachModalHighlight(menu_item_id, id){
