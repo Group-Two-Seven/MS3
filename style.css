@@ -4,6 +4,16 @@
   background: rgb(48, 48, 48);
   color: white;
 }
+.disabled {
+  filter: brightness(0.1);
+  transition-duration:0.25s;
+  transition-timing-function:ease;
+}
+.enabled {
+  filter: brightness(1);
+  transition-duration:0.25s;
+  transition-timing-function:ease;
+}
 #tabs {
   background: rgb(80, 80, 80);
   height: 100vh;

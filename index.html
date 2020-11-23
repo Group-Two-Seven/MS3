@@ -33,13 +33,13 @@
           <tr data-tabname="address" class="tab">
             <td>Address</td>
           </tr>
-          <tr data-tabname="restaurants" class="tab">
+          <tr data-tabname="restaurants" class="tab disabled">
             <td>Restaurants</td>
           </tr>
-          <tr data-tabname="cart" class="tab">
+          <tr data-tabname="cart" class="tab disabled">
             <td>Cart</td>
           </tr>
-          <tr data-tabname="payment" class="tab">
+          <tr data-tabname="payment" class="tab disabled">
             <td>Payment</td>
           </tr>
         </table>
@@ -91,7 +91,7 @@
           </div>
         </div>
         <!-- RESTAURANTS SECTION -->
-        <div id="restaurants" hidden="true">
+        <div id="restaurants" class="disabled" hidden="true">
           <div class="row">
             <div class="col-12 pl-5 header">Categories</div>
             <img src="img/Categories.png" alt="A list of categories for searching" id="categories_bar" class="pb-2" />
@@ -213,7 +213,7 @@
           </div>
         </div>
 
-        <div class="row justify-content-md-center" id="cart">
+        <div id="cart" class="row justify-content-md-center disabled" hidden="true">
           <div class="col-10">
             <div class="header text-center">Cart:</div>
             <div class="header-2 text-center" id="address_in_cart">Delivering to: </div>
@@ -229,7 +229,7 @@
         </div>
         <!-- NEW SECTIONS GO HERE -->
         <!-- ORDER NOW -->
-        <div id="payment" hidden="true">
+        <div id="payment" class="disabled" hidden="true">
           <div class="row">
 
 
