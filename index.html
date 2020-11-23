@@ -216,8 +216,13 @@
         <div class="row justify-content-md-center" id="cart">
           <div class="col-10">
             <div class="header text-center">Cart:</div>
-            <div id="cart_list" class="row">
-              
+            <div id="cart_list" class="row h-50 scrolling">
+              <!-- JS APPENDS THE CART HERE -->
+            </div>
+            <div class="header-2">
+              <hr>
+              <div class="row"><div class="col-6">Total</div><div class="col-6" id="cost_total"><p class="text-right">$0.00</p></div></div>
+              <div class="row justify-content-center"><div class="col-6 text-center"><button class="btn btn-warning w-50 h-100" onClick="changeTab('payment')"><strong>Continue To Payment</strong></button></div></div>
             </div>
           </div>
         </div>

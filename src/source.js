@@ -113,6 +113,7 @@
  ];
 
  var cart = [];//Starts empty
+ var price_total = 0;
 
  $(document).ready(function(){
     const tabs = document.querySelectorAll("tr[data-tabname]");
@@ -271,30 +272,33 @@ function generateOptionsHTML(options, id){
 function updateCart(){
     $(".displayed_cart_item").remove()//remove old cart display
     var item;
+    price_total = 0;
     console.log(cart)
     for(var i=0;i<cart.length;i++){
         item = menu_items.find(x => x.id == cart[i].item_id)
+        price_total+=item.price*cart[i].quantity;
+
         $("#cart_list").append('<div class="col-12 cart_item row displayed_cart_item">\
-        <img class="col-2" src="'+item.image_path+'" alt="'+item.image_alt+'">\
-        <div class="col-2">\
+        <div class="col">\
           <div><strong>'+item.name+'</strong></div>\
           <div>'+item.description+'</div>\
         </div>\
-        <div id="selected_options" class="col-2">\
+        <div id="selected_options" class="col-2"><ul>\
         '+generateCartOptions(cart[i],item.options)+'\
-        </div>\
+        </ul></div>\
         <div class="col-1">\
         <input class="quantity text-center w-100" id="cart_quantity_'+item.id+'" min="0" name="quantity" value="'+cart[i].quantity+'" type="number">\
         <button class="btn pl-0" onClick="quantityInCartChange('+i+','+item.id+')">Update</button>\
         </div>\
         <div class="col-2">\
-          $'+item.price*cart[i].quantity+'\
+          $'+item.price * cart[i].quantity+'\
         </div>\
         <div class="col-2">\
-            <button class="btn btn-danger" onClick="removeItemFromCart('+i+')">remove from cart</button>\
+            <button class="btn btn-danger" onClick="removeItemFromCart('+i+')"><strong>Remove From Cart</strong></button>\
         </div>\
       </div>')
     }
+    $("#cost_total").html('<p class="text-right">$'+price_total.toFixed(2)+'</p>')
 }
 function removeItemFromCart(cart_number){
     cart.splice(cart_number,1)
