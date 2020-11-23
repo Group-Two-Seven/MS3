@@ -113,14 +113,14 @@
  ];
 
  var cart = [];//Starts empty
- 
+
  $(document).ready(function(){
     const tabs = document.querySelectorAll("tr[data-tabname]");
     tabs.forEach(tab => {
         tab.addEventListener("click", () => {// This straps a hidden button onto each tab that will call the "changeTab" function
             changeTab(tab.dataset.tabname)
         })
-    }) 
+    })
 
     const restaurants = document.querySelectorAll("div.restaurant");
     restaurants.forEach(restaurant => {
@@ -258,3 +258,8 @@ function generateOptionsHTML(options, id){
     }
     return result
 }
+/* payment page */
+$(function() {
+$('[data-toggle="tooltip"]').tooltip()
+})
+/* payment page */

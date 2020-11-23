@@ -210,11 +210,40 @@ input[type="number"] {
      -moz-appearance: textfield;
           appearance: textfield;
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 input,
 button {
   border-radius: 1vh;
 }
+/* payment page */
+.rounded {
+    border-radius: 1rem
+}
+/* body{
+    overflow-y:scroll;
+    margin-bottom: : vh-60px;
+} */
+.nav-pills .nav-link {
+    color: #555
+}
+
+.nav-pills .nav-link.active {
+    color: white
+}
+
+input[type="radio"] {
+    margin-right: 5px
+}
+
+.bold {
+    font-weight: bold
+}
+.payment-scroll-bar{
+height: 100vh;
+overflow:scroll;
+}
+
+/* payment page */
