@@ -284,16 +284,31 @@ function updateCart(){
         '+generateCartOptions(cart[i],item.options)+'\
         </div>\
         <div class="col-1">\
-          <div>'+cart[i].quantity+'</div>\
+        <input class="quantity text-center w-100" id="cart_quantity_'+item.id+'" min="0" name="quantity" value="'+cart[i].quantity+'" type="number">\
+        <button class="btn pl-0" onClick="quantityInCartChange('+i+','+item.id+')">Update</button>\
         </div>\
         <div class="col-2">\
           $'+item.price*cart[i].quantity+'\
         </div>\
         <div class="col-2">\
-          <button class="btn btn-danger">remove from cart</button>\
+            <button class="btn btn-danger" onClick="removeItemFromCart('+i+')">remove from cart</button>\
         </div>\
       </div>')
     }
+}
+function removeItemFromCart(cart_number){
+    cart.splice(cart_number,1)
+    updateCart()
+}
+function quantityInCartChange(cart_number, item_id){
+    var new_quantity=$("#cart_quantity_"+item_id).val()
+
+    if(new_quantity!=0){
+        cart[cart_number].quantity=new_quantity
+    }else{
+        cart.splice(cart_number,1)
+    }
+    updateCart()
 }
 function generateCartOptions(cart_item, options){
     var result=""
