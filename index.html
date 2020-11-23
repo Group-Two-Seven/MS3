@@ -78,7 +78,7 @@
 
             <div class="col-3 mr-2"></div>
             <div class="col-6">
-              <input type="text" class="w-75" />
+              <input type="text" class="w-75" onblur="saveAddress()" id="address_field"/>
               <button class="btn-success ml-3">Go!</button>
             </div>
             <div class="col-3"></div>
@@ -216,6 +216,7 @@
         <div class="row justify-content-md-center" id="cart">
           <div class="col-10">
             <div class="header text-center">Cart:</div>
+            <div class="header-2 text-center" id="address_in_cart">Delivering to: </div>
             <div id="cart_list" class="row h-50 scrolling">
               <!-- JS APPENDS THE CART HERE -->
             </div>

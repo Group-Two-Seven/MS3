@@ -114,7 +114,7 @@
 
  var cart = [];//Starts empty
  var price_total = 0;
-
+ var address;
  $(document).ready(function(){
     const tabs = document.querySelectorAll("tr[data-tabname]");
     tabs.forEach(tab => {
@@ -322,6 +322,10 @@ function generateCartOptions(cart_item, options){
 
     }
     return result
+}
+function saveAddress(){
+    address = $("#address_field").val()
+    $('#address_in_cart').text("Delivering to: "+address)
 }
 /* payment page */
 $(function() {
