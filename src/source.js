@@ -219,12 +219,13 @@ function attachModal(item, id){
                 </button>\
                 <div class="row">\
                     <div id="modal_image" class="col-6"><img class="w-100 rounded" src="'+item.image_path+'" alt="'+item.image_alt+'"/></div>\
-                    <div class="col-6"><div>Quantity:</div><button class="w-25 text-center" onclick="this.parentNode.querySelector(\'#quantity_'+item.id+'\').stepDown()">-</button><input class="quantity w-50 text-center" id="quantity_'+item.id+'" min="0" name="quantity" value="1" type="number"><button class="w-25 text-center" onclick="this.parentNode.querySelector(\'#quantity_'+item.id+'\').stepUp()">+</button></div>\
+                    <div class="col-6"><div>Quantity:</div><button id="step_down_button" class="w-25 text-center" onclick="this.parentNode.querySelector(\'#quantity_'+item.id+'\').stepDown()">-</button><input class="quantity w-50 text-center" id="quantity_'+item.id+'" min="0" name="quantity" value="1" type="number"><button id="step_up_button" class="w-25 text-center" onclick="this.parentNode.querySelector(\'#quantity_'+item.id+'\').stepUp()">+</button></div>\
                     <div id="modal_description" class="col-6">'+item.deep_description+'</div>\
                     <div id="modal_options" class="col-6">'+generateOptionsHTML(item.options, item.id)+'</div>\
                 </div>\
                 </div>\
                 <div class="modal-footer">\
+                <span class="pr-3"><strong>$'+item.price+'</strong>/ea</span>\
                 <button type="button" class="btn btn-success" onClick="addToCart('+item.id+',\'menu_item_'+item.id+'_popup\')">Add to Cart</button>\
                 </div>\
             </div>\

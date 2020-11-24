@@ -272,7 +272,7 @@
                       <div class="tab-content ">
                         <!-- credit card info-->
                         <div id="credit-card" class="tab-pane fade show active pt-3">
-                          <form role="form">
+                          <form role="form" action="#" onsubmit="submitPayment();this.preventDefault()">
                             <div class="form-group"> <label for="username">
                                 <h6>Card Owner</h6>
                               </label> <input type="text" name="username" placeholder="Card Owner Name" required
@@ -304,8 +304,8 @@
                                   </label> <input type="text" required class="form-control"> </div>
                               </div>
                             </div>
-                            <div class="card-footer"> <button type="button"
-                                class="subscribe btn btn-primary btn-block shadow-sm" onclick="submitPayment()"> Confirm
+                            <div class="card-footer"> <button type="submit"
+                                class="subscribe btn btn-primary btn-block shadow-sm"> Confirm
                                 Payment </button>
                           </form>
                         </div>
