@@ -95,7 +95,15 @@
           <div class="row">
             <div class="col-12 pl-5 header">Categories</div>
             <img src="img/Categories.png" alt="A list of categories for searching" id="categories_bar" class="pb-2" />
-            <div class="col-12 pl-5 header">Restaurants</div>
+            <div class="col-12 pl-5 header">Restaurants 
+              <img
+                src="img/decide.png"
+                alt="cant decide button"
+                id="decide_button"
+                style="float:right"
+                class="pr-5 pb-2"
+              />
+            </div>
             <div class="col-12 row" id="restaurant_list">
               <div class="col restaurant" data-restaurant="Chick-fil-a">
                 <div class="row">
@@ -183,8 +191,8 @@
           <div id="modal_placeholder">
             <!-- JS APPENDS HERE -->
           </div>
-          <div class="row">
-            <div class="col-12 go_back">
+          <div class="row pl-2">
+            <div class="col-12 go_back pl-1 ml-1">
               <a href="#" onclick="changeTab('restaurants')">
                 Return to Restaurants
               </a>
@@ -192,11 +200,11 @@
             <div class="col-12 pl-3 text-center header-2" id="menu_title">
               Menu
             </div>
-            <div class="col-12 pl-3 header-2">Popular Items</div>
+            <div class="col-12 ml-3 pl-3 header-2">Popular Items</div>
             <div class="col-12 text-center row" id="popular_items">
               <!-- JS APPENDS THE MENU HERE -->
             </div>
-            <div class="col-12 pl-3 header-2">Menu Categories</div>
+            <div class="col-12  ml-3 pl-3 header-2">Menu Categories</div>
             <div class="col-4 text-center" id="menu_categories">
               <div class="col-12 menu_catagory">Burger Meals</div>
               <div class="col-12 menu_catagory">Chicken & Fish</div>

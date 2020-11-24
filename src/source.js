@@ -115,6 +115,13 @@
  var cart = [];//Starts empty
  var price_total = 0;
  var address;
+ var restaurant_list=[
+     "Chick-fil-a",
+     "Dairy Queen",
+     "In-N-Out Burger",
+     "Nando's",
+     "Subway"
+ ]
  $(document).ready(function(){
     const tabs = document.querySelectorAll("tr[data-tabname]");
     tabs.forEach(tab => {
@@ -157,15 +164,19 @@
         </div>');
 
         attachModalHighlight(menu_items[i].id, i)
-
     }
+
+    const decide_button = document.getElementById("decide_button")
+    decide_button.addEventListener("click", ()=>{//random restaurant picker
+        openMenu(restaurant_list[(Math.floor(Math.random() * restaurant_list.length))]);
+    })
 })
 
 function changeTab(tab_name){
     //get all elements needed
     const rows = $(".tab");
     const screens = $("#main_content").children()
-    console.log(screens)
+
     if(!$("#"+tab_name).hasClass("disabled")){
         //Remove the highlight from the previous tab and highlight the new tab
         for(var i=0; i<rows.length; i++){
@@ -276,7 +287,7 @@ function updateCart(){
     $(".displayed_cart_item").remove()//remove old cart display
     var item;
     price_total = 0;
-    console.log(cart)
+
     for(var i=0;i<cart.length;i++){
         item = menu_items.find(x => x.id == cart[i].item_id)
         price_total+=item.price*cart[i].quantity;
@@ -328,8 +339,6 @@ function generateCartOptions(cart_item, options){
     var result=""
     for(var i=0;i<cart_item.options.length;i++){
         result+=" <li>"+options.find(x => x.id == cart_item.options[i]).name+"</li>"
-        console.log(result)
-
     }
     return result
 }
