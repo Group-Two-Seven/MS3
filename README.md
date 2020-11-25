@@ -1,5 +1,8 @@
 # MS3
+## Running
+Double click index.html
 
+Note: does not work on Internet Explorer.
 ## Resources:
 - [HTML](https://www.w3schools.com/html/)
 - [CSS](https://www.w3schools.com/Css/)
