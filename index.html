@@ -11,9 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
-  <!-- payment -->
 
-  <!-- payment -->
 
   <title>MS3</title>
 </head>
@@ -97,7 +95,7 @@
           <div class="row">
             <div class="col-12 pl-5 header">Categories</div>
             <img src="img/Categories.png" alt="A list of categories for searching" id="categories_bar" class="pb-2" />
-            <div class="col-12 pl-5 header">Restaurants 
+            <div class="col-12 pl-5 header">Restaurants
               <img
                 src="img/decide.png"
                 alt="cant decide button"
@@ -277,13 +275,13 @@
                           <form role="form" action="#" onsubmit="submitPayment();return false;">
                             <div class="form-group"> <label for="username">
                                 <h6>Card Owner</h6>
-                              </label> <input type="text" name="username" placeholder="Card Owner Name" required
+                              </label> <input type="text" name="username" placeholder="Eg. Will Smith" required
                                 class="form-control "> </div>
                             <div class="form-group"> <label for="cardNumber">
                                 <h6>Card number</h6>
                               </label>
-                              <div class="input-group"> <input type="text" name="cardNumber"
-                                  placeholder="Valid card number" class="form-control " required>
+                              <div class="input-group"> <input type="number" name="cardNumber"
+                                  placeholder="Eg. 5301220120201127" class="form-control " required>
                                 <div class="input-group-append"> <span class="input-group-text text-muted"> <i
                                       class=" fa fa-cc-visa "></i> <i class=" fa fa-cc-mastercard "></i> <i
                                       class="	fa fa-cc-amex "></i> </span> </div>
@@ -303,7 +301,7 @@
                                 <div class="form-group mb-4"> <label data-toggle="tooltip"
                                     title="Three digit CV code on the back of your card">
                                     <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
-                                  </label> <input type="text" required class="form-control"> </div>
+                                  </label> <input type="text"  placeholder="Eg. 123" required class="form-control"> </div>
                               </div>
                             </div>
                             <div class="card-footer"> <button type="submit"
@@ -329,10 +327,10 @@
               </div>
             </div>
           </div>
-          <!-- ORDER NOW -->
+          <!-- Payment -->
         </div>
         </div>
-        <!-- ORDER COMPLETE -->
+        <!-- Payment COMPLETE -->
         <div id="order_complete" class="p-0 m-0" hidden="true">
           <img class="w-100" src="img/order_complete.png" alt="Your order is on its way!">
         </div>
