@@ -1,4 +1,7 @@
 /* Lots of playing around in here to do. */
+body {
+  font-size:1.75vh
+}
 #nav {
   height: 100vh;
   background: rgb(48, 48, 48);
