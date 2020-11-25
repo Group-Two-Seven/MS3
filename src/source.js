@@ -186,8 +186,6 @@
             }
         })
     })
-    // disabled_buttons = disabled_buttons.find(x => x.localName =="tr")
-    console.log(disabled_buttons)
 })
 
 function changeTab(tab_name){
