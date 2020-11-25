@@ -7,6 +7,29 @@ body {
   background: rgb(48, 48, 48);
   color: white;
 }
+
+@-webkit-keyframes shake {
+  0%, 100% {-webkit-transform: translateX(0);}
+  10%, 50%, 90% {-webkit-transform: translateX(-0.5vh);}
+  30%, 70% {-webkit-transform: translateX(0.5vh);}
+}
+
+@keyframes shake {
+  0%, 100% {transform: translateX(0);}
+  10%, 50%, 90% {transform: translateX(-0.5vh);}
+  30%, 70% {transform: translateX(0.5vh);}
+}
+.warning {
+  background-color: rgb(228, 195, 195);
+  background-repeat: no-repeat;
+  background-position: left top;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
 .disabled {
   filter: brightness(0.1);
   transition-duration:0.25s;

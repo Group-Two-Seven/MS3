@@ -80,7 +80,7 @@
 
             <div class="col-3 mr-2"></div>
             <div class="col-6">
-              <input type="text" class="w-75" onblur="saveAddress()" id="address_field" />
+              <input type="text" class="w-75" onblur="saveAddress()" id="address_field" onfocus="$('#address_field').removeClass('warning')" />
               <button class="btn-success ml-3">Go!</button>
             </div>
             <div class="col-3"></div>

@@ -170,6 +170,24 @@
     decide_button.addEventListener("click", ()=>{//random restaurant picker
         openMenu(restaurant_list[(Math.floor(Math.random() * restaurant_list.length))]);
     })
+
+    
+    const disabled_class_elements = document.getElementsByClassName("disabled")
+    var disabled_array=[];
+    var disabled_buttons=[];
+    for(var i =0; i<disabled_class_elements.length; i++){
+        disabled_array.push(disabled_class_elements[i])
+    }
+    disabled_buttons = disabled_array.filter(x => x.localName == "tr")
+    disabled_buttons.forEach(disabled_button => {
+        disabled_button.addEventListener("click", ()=>{
+            if($("#"+disabled_button.id).hasClass("disabled")){
+                $("#address_field").addClass("warning")
+            }
+        })
+    })
+    // disabled_buttons = disabled_buttons.find(x => x.localName =="tr")
+    console.log(disabled_buttons)
 })
 
 function changeTab(tab_name){
