@@ -208,12 +208,10 @@ html {
   overflow-y: scroll;
 }
 .menu_img{
-  display: block;
-  max-width:230px;
-  max-height:95px;
-  width: auto;
-  height: auto;
-  padding-bottom:2vh;
+  border-radius:8%;
+  margin-top: .5vh;
+  width: 7vw;
+ height:9vh;
 }
 .modal {
   width: 100%;

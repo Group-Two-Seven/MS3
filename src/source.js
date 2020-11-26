@@ -145,7 +145,7 @@
     for(var i=0; i<menu_items.length; i++){
         $("#menu_items").prepend('\
         <div class="col-12 menu_item row" id="menu_item_'+i+'"> \
-            <div class="col-3"><img class="menu_img" src="'+menu_items[i].image_path+'" alt="'+menu_items[i].image_alt+'"></div>\
+            <div class="col-3 "><img class="menu_img" src="'+menu_items[i].image_path+'" alt="'+menu_items[i].image_alt+'"></div>\
                 <div class="col">\
                     <div><strong>'+menu_items[i].name+'</strong></div>\
                 <div>'+menu_items[i].description+'</div>\
@@ -171,7 +171,7 @@
         openMenu(restaurant_list[(Math.floor(Math.random() * restaurant_list.length))]);
     })
 
-    
+
     const disabled_class_elements = document.getElementsByClassName("disabled")
     var disabled_array=[];
     var disabled_buttons=[];
@@ -202,10 +202,10 @@ function changeTab(tab_name){
                 rows[i].classList.remove("active");
             }
         }
-        
+
         //Hide old screen content and unhide new screen content
         for(var i=0; i<screens.length; i++){
-            
+
             if(screens[i].id == tab_name){
                 screens[i].removeAttribute("hidden")//Here is the workaround for setAttribute("hidden","false"), which wasn't working.
             }else{
