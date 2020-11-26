@@ -354,7 +354,6 @@ function removeItemFromCart(cart_number) {
 }
 function quantityInCartChange(cart_number, item_id) {
     var new_quantity = $("#cart_quantity_" + item_id).val()
-
     if (new_quantity != 0) {
         cart[cart_number].quantity = new_quantity
     } else {
@@ -395,7 +394,7 @@ $(function () {
 function showCartQuantity() {
     var numItems = 0;
     for (let i = 0; i < cart.length; i++) {
-        numItems += cart[i].quantity;
+        numItems += parseInt(cart[i].quantity,10);
     }
     document.getElementById("cart_tab_text").innerHTML = "Cart (" + numItems + ")";
 }
