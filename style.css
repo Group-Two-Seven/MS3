@@ -234,7 +234,7 @@ html {
   background-color: rgb(82, 184, 124);
   font-weight: 1000;
 
-  
+
 }
 * {
   scrollbar-width: thin;
@@ -284,14 +284,20 @@ input,
 button {
   border-radius: 1vh;
 }
+.rest-image{
+  border-radius:15%;
+  margin-top: .5vh;
+  width: 7vw;
+ height:9vh;
+
+}
+
+
 /* payment page */
 .rounded {
     border-radius: 1rem
 }
-/* body{
-    overflow-y:scroll;
-    margin-bottom: : vh-60px;
-} */
+
 .nav-pills .nav-link {
     color: #555
 }
