@@ -142,7 +142,7 @@ $(document).ready(function () {
         window.alert("The left navbar doesn't work in this prototype, sorry :(");
     })
 
-    document.getElementById("address_field").addEventListener("keyup", function (event) {
+    document.getElementById("address_field").addEventListener("keydown", function (event) {
         // Number 13 is the "Enter" key on the keyboard
         if (event.keyCode === 13) {
             document.getElementById("go_btn").click();
