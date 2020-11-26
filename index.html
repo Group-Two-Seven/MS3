@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
-
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
 
   <title>MS3</title>
 </head>
@@ -37,7 +37,7 @@
             <td>Restaurants</td>
           </tr>
           <tr data-tabname="cart" class="tab disabled" id="cart_tab">
-            <td>Cart</td>
+            <td id="cart_tab_text">Cart (0)</td>
           </tr>
           <tr data-tabname="payment" class="tab disabled" id="payment_tab">
             <td>Payment</td>
@@ -78,8 +78,11 @@
 
             <div class="col-3 mr-2"></div>
             <div class="col-6">
-              <input type="text" class="w-75" onblur="saveAddress()" id="address_field" onfocus="$('#address_field').removeClass('warning')" />
-              <button class="btn-success ml-3">Go!</button>
+              <input type="text" class="w-75" 
+                id="address_field" 
+                onfocus="$('#address_field').removeClass('warning')"
+                onkeydown="" />
+              <button id="go_btn" class="btn-success ml-3" onclick="saveAddress()">Go!</button>
             </div>
             <div class="col-3"></div>
           </div>
@@ -96,13 +99,8 @@
             <div class="col-12 pl-5 header">Categories</div>
             <img src="img/Categories.png" alt="A list of categories for searching" id="categories_bar" class="pb-2" />
             <div class="col-12 pl-5 header">Restaurants
-              <img
-                src="img/decide.png"
-                alt="cant decide button"
-                id="decide_button"
-                style="float:right"
-                class="pr-5 pb-2"
-              />
+              <img src="img/decide.png" alt="cant decide button" id="decide_button" style="float:right"
+                class="pr-5 pb-2" />
             </div>
             <div class="col-12 row" id="restaurant_list">
               <div class="col restaurant" data-restaurant="Chick-fil-a">
@@ -123,7 +121,7 @@
               <div class="col restaurant" data-restaurant="Dairy Queen">
                 <div class="row">
                   <div class="col-4">
-                    <img class="rest-image"  src="img/restaurant2.png" alt="Dairy Queen" class="restaurant-logo" />
+                    <img class="rest-image" src="img/restaurant2.png" alt="Dairy Queen" class="restaurant-logo" />
                   </div>
                   <div class="col-8">
                     <div class="restaurant_name">
@@ -301,7 +299,8 @@
                                 <div class="form-group mb-4"> <label data-toggle="tooltip"
                                     title="Three digit CV code on the back of your card">
                                     <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
-                                  </label> <input type="text"  placeholder="Eg. 123" required class="form-control"> </div>
+                                  </label> <input type="text" placeholder="Eg. 123" required class="form-control">
+                                </div>
                               </div>
                             </div>
                             <div class="card-footer"> <button type="submit"
@@ -329,18 +328,18 @@
           </div>
           <!-- Payment -->
         </div>
-        </div>
-        <!-- Payment COMPLETE -->
-        <div id="order_complete" class="p-0 m-0" hidden="true">
-          <img class="w-100" src="img/order_complete.png" alt="Your order is on its way!">
-        </div>
+      </div>
+      <!-- Payment COMPLETE -->
+      <div id="order_complete" class="p-0 m-0" hidden="true">
+        <img class="w-100" src="img/order_complete.png" alt="Your order is on its way!">
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="src/source.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-      crossorigin="anonymous"></script>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="src/source.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

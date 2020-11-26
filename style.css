@@ -1,6 +1,7 @@
 /* Lots of playing around in here to do. */
 body {
-  font-size:1.75vh
+  font-size:1.75vh;
+  font-family: 'Montserrat', sans-serif;
 }
 #nav {
   height: 100vh;
@@ -62,14 +63,14 @@ body {
 }
 .tab {
   width: 100%;
-  height: 19.75vh;
+  height: 20.1vh;
   text-align: center;
   vertical-align: middle;
   border-bottom-left-radius: 20px;
   padding: auto;
   font-size: 2.5vw;
-  border-top: 1vh solid rgb(48, 48, 48);
-  border-bottom: 1vh solid rgb(48, 48, 48);
+  /* border-top: 1vh solid rgb(48, 48, 48); */
+  border-bottom: 0.3vh solid rgb(48, 48, 48);
   user-select: none;
 }
 table {
@@ -278,8 +279,7 @@ input[type=number]::-webkit-outer-spin-button {
 .scrolling {
   overflow-y:scroll;
 }
-input,
-button {
+input, button {
   border-radius: 1vh;
 }
 .rest-image{
@@ -316,4 +316,22 @@ height: 100vh;
 overflow:scroll;
 }
 
-/* payment page */
+#go_btn {
+  border: none;
+  outline: none;
+  border-radius: 45px;
+  padding: 3px 10px 3px 10px;
+}
+
+#go_btn:active {
+  border: none;
+  outline: none;
+  border-radius: 45px;
+  padding: 3px 10px 3px 10px;
+}
+
+#address_field {
+  outline: none;
+  border:  1px solid black ;
+  padding-left: 10px;
+}

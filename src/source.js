@@ -138,8 +138,14 @@
     })
 
     const nav = document.getElementById("nav");
-    nav.addEventListener("click", () => {// This straps a hidden button onto the nav image on the left that will reset the screen to news
-        changeTab("news")
+    nav.addEventListener("click", () => {// Generates a popup with the text below
+        window.alert("The left navbar doesn't work in this prototype, sorry :(");
+    })
+
+    // const addressPage = document.getElementById("address");
+    const goBtn = document.getElementById("go_btn");
+    goBtn.addEventListener("submit", () => {
+        window.alert("The left navbar doesn't work in this prototype, sorry :(");
     })
 
     for(var i=0; i<menu_items.length; i++){
@@ -281,6 +287,7 @@ function addToCart(item_id, modal_id){
     for(var i=0; i<options.length;i++){
         options[i].checked=false;
     }
+    showCartQuantity();
 }
 
 function attachModalHighlight(menu_item_id, id){
@@ -337,6 +344,7 @@ function updateCart(){
         $("#restaurants_tab").removeClass("completed")
         $("#cart_tab").removeClass("completed")
     }
+    showCartQuantity()
 }
 function removeItemFromCart(cart_number){
     cart.splice(cart_number,1)
@@ -381,3 +389,11 @@ $(function() {
 $('[data-toggle="tooltip"]').tooltip()
 })
 /* payment page */
+
+function showCartQuantity() {
+    var numItems = 0;
+    for(let i = 0; i < cart.length; i++) {
+        numItems += cart[i].quantity;
+    }
+    document.getElementById("cart_tab_text").innerHTML = "Cart (" + numItems + ")";
+}
