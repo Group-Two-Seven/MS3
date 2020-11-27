@@ -241,11 +241,24 @@ html {
 #popular_items {
   overflow-x: scroll;
 }
+.remove-cart-style{
+  border-radius: 7%;
+  width: 7vw;
+  height: 7.5vh;
+  font-size: 0.8vw;
+
+}
+.cart-update-font{
+  margin-left: -0.5vw;
+  padding: 0.3vh 0.3vw;
+ background-color: green;
+ color:white;
+  font-size: 0.9vw;
+}
 
 .menu_catagory {
   user-select: none;
   height: 5vh;
-  /* margin-bottom: 3vh; */
   margin-top: 1vh;
   font-size: 3vh;
 }
