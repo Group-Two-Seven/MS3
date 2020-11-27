@@ -62,11 +62,11 @@ body {
 }
 
 .completed {
-  background-color: rgb(1, 172, 7)
+  background-color: rgb(16, 82, 23);
 }
 
 #news_tab {
-  background-color: rgb(255, 132, 0);
+  background-color: rgb(56, 163, 46);
 }
 
 #news_tab.active {
@@ -94,7 +94,6 @@ body {
   border-bottom-left-radius: 20px;
   padding: auto;
   font-size: 2.5vw;
-  /* border-top: 1vh solid rgb(48, 48, 48); */
   border-bottom: 0.3vh solid rgb(48, 48, 48);
   user-select: none;
 }
@@ -139,7 +138,6 @@ html {
 }
 
 .promo {
-  /* box-shadow: 0.5vw 1vh rgba(0, 0, 0, 0.2); */
   width: 20vw;
   margin-bottom: 7vh;
   margin-top: 5px;
@@ -171,13 +169,10 @@ html {
   background-color: rgb(229, 228, 227);
   margin: 1vh;
   border-radius: 2vh;
-  /* box-shadow: 0.1vw 0.5vh rgba(0, 0, 0, 0.2); */
 }
 
 .restaurant:hover {
   filter: brightness(95%);
-  /* box-shadow: 0.1vw 0.9vh rgba(0, 0, 0, 0.2); */
-  /* background-color: rgb(255, 255, 255); */
 }
 
 .restaurant:active {
@@ -205,12 +200,10 @@ html {
   background-color: rgb(229, 228, 227);
   margin: 1.2vh 0;
   border-radius: 2vh;
-  /* box-shadow: 0.1vw 0.5vh rgba(0, 0, 0, 0.2); */
 }
 
 .menu_item:hover {
   filter: brightness(95%);
-  /* box-shadow: 0.1vw 0.5vh rgba(0, 0, 0, 0.2); */
 }
 
 .menu_item:active {
@@ -224,13 +217,11 @@ html {
   background-color: rgb(229, 228, 227);
   margin: 1vh 2vh;
   border-radius: 2vh;
-  /* box-shadow: 0.1vw 0.5vh rgba(0, 0, 0, 0.2); */
 }
 
 .menu_item_highlight:hover {
   filter: brightness(95%);
   transform: scale(1.01);
-  /* box-shadow: 0.1vw 0.5vh rgba(0, 0, 0, 0.2); */
 }
 
 .menu_item_highlight:active {
@@ -241,18 +232,19 @@ html {
 #popular_items {
   overflow-x: scroll;
 }
-.remove-cart-style{
+
+.remove-cart-style {
   border-radius: 7%;
   width: 7vw;
   height: 7.5vh;
   font-size: 0.8vw;
-
 }
-.cart-update-font{
+
+.cart-update-font {
   margin-left: -0.5vw;
   padding: 0.3vh 0.3vw;
- background-color: green;
- color:white;
+  background-color: green;
+  color: white;
   font-size: 0.9vw;
 }
 
@@ -268,7 +260,6 @@ html {
   height: 5vh;
   background-color: rgb(255, 255, 255);
   border-radius: 1vh;
-  /* margin-bottom: 3vh; */
   margin-top: 1vh;
   font-size: 3vh;
 }
@@ -280,10 +271,8 @@ html {
 #menu_categories {
   user-select: none;
   height: 50vh;
-  /* background-color: rgb(229, 228, 227); */
   margin: 2vh;
   border-radius: 2vh;
-  /* box-shadow: 0.1vw 0.5vh rgba(0, 0, 0, 0.2); */
   overflow-y: scroll;
 }
 
@@ -446,19 +435,32 @@ input[type="radio"] {
 
 .menu_catagory:hover, .menu_item:hover, .restaurant:hover, .promo:hover, #continue_button:hover {
   transform: scale(1.01);
-  /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
 }
 
-.tab:hover, .menu_catagory:hover, .menu_item:hover, .restaurant:hover, .menu_item_highlight:hover, .promo:hover {
+#update_button, #remove_from_cart, .tab:hover, .menu_catagory:hover, .menu_item:hover, .restaurant:hover, .menu_item_highlight:hover, .promo:hover {
   transition: 0.2s;
   cursor: pointer;
 }
 
-#decide_button, .menu_catagory:hover, .menu_item:hover, .restaurant:hover, .menu_item_highlight:hover, .promo:hover {
+#update_button, #remove_from_cart, #decide_button, .menu_catagory:hover, .menu_item:hover, .restaurant:hover, .menu_item_highlight:hover, .promo:hover {
   filter: brightness(90%);
 }
 
 #quantity_1, #quantity_2, #quantity_3, #quantity_4, #quantity_5, #quantity_6, #quantity_7, #quantity_8 {
   border: 3px solid rgb(255, 255, 255);
   background-color: rgb(211, 234, 255);
+}
+
+#cart_quantity_8, #cart_quantity_7, #cart_quantity_6, #cart_quantity_5, #cart_quantity_4, #cart_quantity_3, #cart_quantity_2, #cart_quantity_1 {
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+
+.btn.btn-danger.remove-cart-style {
+  border-radius: 10px;
+  padding-bottom: -10px;
+}
+
+#restaurants_tab, #address_tab, #news_tab, #cart_tab, #payment_tab {
+  font-size: 2vw;
 }

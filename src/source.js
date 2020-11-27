@@ -122,6 +122,7 @@ var restaurant_list = [
     "Nando's",
     "Subway"
 ]
+
 $(document).ready(function () {
     const tabs = document.querySelectorAll("tr[data-tabname]");
     tabs.forEach(tab => {
@@ -229,7 +230,6 @@ function openMenu(menu_name) {
     document.getElementById("menu").removeAttribute("hidden")
     $("#menu_title").text(menu_name + " - Menu")
     // Show menu tab
-
 }
 
 function attachModal(item, id) {
@@ -348,10 +348,12 @@ function updateCart() {
     }
     showCartQuantity()
 }
+
 function removeItemFromCart(cart_number) {
     cart.splice(cart_number, 1)
     updateCart()
 }
+
 function quantityInCartChange(cart_number, item_id) {
     var new_quantity = $("#cart_quantity_" + item_id).val()
     if (new_quantity != 0) {
@@ -361,6 +363,7 @@ function quantityInCartChange(cart_number, item_id) {
     }
     updateCart()
 }
+
 function generateCartOptions(cart_item, options) {
     var result = ""
     for (var i = 0; i < cart_item.options.length; i++) {
@@ -368,6 +371,7 @@ function generateCartOptions(cart_item, options) {
     }
     return result
 }
+
 function saveAddress() {
     address = $("#address_field").val()
     $('#address_in_cart').text("Delivering to: " + address)
@@ -381,10 +385,13 @@ function saveAddress() {
         $('.enabled').removeClass("enabled")
     }
 }
+
 function submitPayment() {
-    $("#payment_tab").addClass("completed")
-    changeTab("order_complete")
+    $("#payment_tab").addClass("completed");
+    changeTab("order_complete");
+    resetVarsAndTabs();
 }
+
 /* payment page */
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
@@ -394,7 +401,20 @@ $(function () {
 function showCartQuantity() {
     var numItems = 0;
     for (let i = 0; i < cart.length; i++) {
-        numItems += parseInt(cart[i].quantity,10);
+        numItems += parseInt(cart[i].quantity, 10);
     }
     document.getElementById("cart_tab_text").innerHTML = "Cart (" + numItems + ")";
+    document.getElementById("cart_tab_text").innerHTML = "<i class='fas fa-shopping-cart'></i> Cart (" + numItems + ")";
+}
+
+function resetVarsAndTabs() {
+    cart = [];
+    address = "";
+    price_total = 0;
+    showCartQuantity();
+    $("#address_tab").removeClass("completed")
+    $("#restaurants_tab").removeClass("completed")
+    $("#cart_tab").removeClass("completed")
+    $("#payment_tab").removeClass("completed")
+    document.getElementById("address_field").value = "";
 }
