@@ -328,7 +328,7 @@ function updateCart() {
         </ul></div>\
         <div class="col-1">\
         <input class="quantity text-center w-100" id="cart_quantity_'+ item.id + '" min="0" name="quantity" value="' + cart[i].quantity + '" type="number">\
-        <button class="btn pl-0 cart-update-font" onClick="quantityInCartChange('+ i + ',' + item.id + ') ">Update</button>\
+        <button class="btn cart-update-font " onClick="quantityInCartChange('+ i + ',' + item.id + ') ">Update</button>\
         </div>\
         <div class="col-2">\
           $'+ item.price * cart[i].quantity + '\
