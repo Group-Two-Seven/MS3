@@ -221,6 +221,8 @@ function changeTab(tab_name) {
                 screens[i].setAttribute("hidden", "true")
             }
         }
+    }else{
+        changeTab("address")
     }
     return true;
 }
